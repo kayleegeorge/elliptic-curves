@@ -36,7 +36,7 @@ proptest = "1.4"
 rand_core = { version = "0.6", features = ["getrandom"] }
 
 [features]
-default = ["arithmetic", "ecdh", "ecdsa", "pem", "std"]
+default = ["arithmetic", "ecdh", "ecdsa", "pem", "std", "zkvm_backend"]
 alloc = ["ecdsa-core?/alloc", "elliptic-curve/alloc", "primeorder?/alloc"]
 std = ["alloc", "ecdsa-core?/std", "elliptic-curve/std"]
 
@@ -54,6 +54,7 @@ serde = ["ecdsa-core?/serde", "elliptic-curve/serde", "primeorder?/serde", "serd
 sha384 = ["digest", "sha2"]
 test-vectors = ["hex-literal"]
 voprf = ["elliptic-curve/voprf", "sha2"]
+zkvm_backend = []
 
 [package.metadata.docs.rs]
 all-features = true

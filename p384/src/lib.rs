@@ -4,7 +4,7 @@
     html_logo_url = "https://raw.githubusercontent.com/RustCrypto/meta/master/logo.svg",
     html_favicon_url = "https://raw.githubusercontent.com/RustCrypto/meta/master/logo.svg"
 )]
-#![forbid(unsafe_code)]
+// #![forbid(unsafe_code)]
 #![warn(missing_docs, rust_2018_idioms, unused_qualifications)]
 #![doc = include_str!("../README.md")]
 
@@ -132,3 +132,7 @@ impl elliptic_curve::VoprfParameters for NistP384 {
     /// See <https://www.ietf.org/archive/id/draft-irtf-cfrg-voprf-08.html#section-4.4-1.2>.
     type Hash = sha2::Sha384;
 }
+
+/// Backend for zkvm.
+#[cfg(feature = "zkvm_backend")]
+pub mod zkvm;
